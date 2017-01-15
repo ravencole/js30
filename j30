@@ -49,6 +49,10 @@ function displayHelp {
     ./scripts/displayHelp
 }
 
+function nodeProject {
+    babel-node ./src/$PROJECT_NAME/index.js
+}
+
 if [ $# == 0 ]; then
     echo -e "${RED}At least one argument has to be passed"
     echo -e "${RED}Summon the help page with \"j30 help\""
@@ -89,6 +93,9 @@ case $ACTION_NAME in
         ;;
     "remove")
         removeProject
+        ;;
+    "node")
+        nodeProject
         ;;
     *)
         echo -e "${RED}\"${ACTION_NAME}\" is not a valid action"
