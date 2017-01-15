@@ -1,12 +1,13 @@
 require('./styles/app.scss')
 
-const inputs = document.querySelectorAll('.controls input'),
-      INPUTS = [...Array(inputs.length)]
-                    .map((_,i) => {
-                        inputs[i].addEventListener('change', handleUpdate)
-                        inputs[i].addEventListener('mousemove', handleUpdate)
-                        return inputs[i]
-                    })
+const inputs = document.querySelectorAll('.controls input')
+
+[...Array(inputs.length)]
+    .map((_,i) => {
+        inputs[i].addEventListener('change', handleUpdate)
+        inputs[i].addEventListener('mousemove', handleUpdate)
+        return inputs[i]
+    })
 
 function handleUpdate() {
     document
